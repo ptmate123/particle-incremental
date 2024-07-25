@@ -1,2 +1,2 @@
-# particle_incremental
+# particle-incremental
 an incremental game
