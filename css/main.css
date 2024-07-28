@@ -1,0 +1,50 @@
+:root {
+    --btn-size: 100px;
+}
+
+* {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: rgb(25, 25, 25);
+    margin: 50px;
+}
+
+.version {
+    border: 2px solid rgb(10, 80, 10);
+    padding: 3px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.top-data {
+    text-align: center;
+}
+
+.top-particle-line {
+    font-size: 20px;
+}
+
+.top-particle {
+    font-size: 30px;
+    color: rgb(10, 80, 10);
+}
+
+.top-bar {
+    border-spacing: 5px;
+    margin: 50px auto;
+}
+
+.tab-btn {
+    width: calc(var(--btn-size));
+    height: calc(var(--btn-size) * 0.6);
+    font-size: calc(var(--btn-size) * 0.2);
+    background-color: black;
+}
+
+.tab {
+    margin: auto;
+}
