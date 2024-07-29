@@ -10,41 +10,35 @@
 <body onload="load()">
     <link rel="icon" href="assets/particle_incremental.png">
     <link rel="stylesheet" href="css/main.css">
-    <div class="version">v1.0.1</div>
-    <div class="top-data">
-        <span class="top-particle-line">你有 <span class="top-particle">0</span> 个粒子</span>
-    </div>
-    <table class="top-bar">
-        <tbody>
-            <tr>
-                <td><button class="tab-btn" onclick="changeTab(1)">粒子</button></td>
-                <td><button class="tab-btn" onclick="changeTab(2)">设置</button></td>
-            </tr>
-        </tbody>
-    </table>
-    <div id="alltab">
-        <div class="tab" style="display: block;">
-            <button onclick="increase()">+1</button>
+
+    <div id="version">v1.0.1</div>
+
+    <header id="top">
+        <div id="top-data">
+            <span id="top-particle-line">你有 <span id="top-particle">0</span> 个粒子</span>
+            <span id="pps-line">你每秒可以得到 <span id="pps">0</span> 个粒子</span>
         </div>
-        <div class="tab" style="display: none;">
-            <div class="opt-container" style="width: 309px;">
-                <button onclick="toggleAutoSave()" class="opt-btn" id="toggle-auto-save">自动保存: 关</button>
-                <button onclick="importSave()" class="opt-btn">导入</button>
-                <button onclick="exportSave()" class="opt-btn">导出</button>
-                <button onclick="save()" class="opt-btn">保存</button>
-                <button onclick="hardReset()" class="opt-btn">硬重置</button>
-            </div>
-            <div class="theme-container">
-                <div>主题：</div>
-                <button class="theme-btn">dark</button>
-                <button class="theme-btn">light</button>
-            </div>
+        <div id="sel-bar">
+            <button class="tab-btn" onclick="changeTab(1)">粒子</button>
+            <button class="tab-btn" onclick="changeTab(2)">设置</button>
+        </div>
+    </header>
+
+    <div class="tab" style="visibility: visible;"></div>
+    <div class="tab" style="visibility: hidden;">
+        <div id="opt-container" style="width: 309px;">
+            <button onclick="toggleAutoSave()" class="opt-btn" id="toggle-auto-save">自动保存: 关</button>
+            <button onclick="importSave()" class="opt-btn">导入</button>
+            <button onclick="exportSave()" class="opt-btn">导出</button>
+            <button onclick="save()" class="opt-btn">保存</button>
+            <button onclick="hardReset()" class="opt-btn">硬重置</button>
         </div>
     </div>
     <script src="scripts/break_eternity.js"></script>
     <script src="scripts/format.js"></script>
     <script src="scripts/save.js"></script>
     <script src="scripts/game.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>

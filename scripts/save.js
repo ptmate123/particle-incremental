@@ -1,14 +1,10 @@
 // every interval has unique id
 var autosaveId
 
-function saveIsVaild(save) {
-    return save && save != null && save != ""
-}
-
 function setAutoSave(state) {
-    player.autosave = state
+    player.settings.autosave = state
     var toggleBtn = document.getElementById("toggle-auto-save")
-    if (player.autosave) {
+    if (state) {
         toggleBtn.innerHTML = "自动保存: 开"
         autosaveId = setInterval(save, 5000)
         return
@@ -18,16 +14,17 @@ function setAutoSave(state) {
 }
 
 function toggleAutoSave() {
-    if (player.autosave) {
-        setAutoSave(false)
-    } else {
-        setAutoSave(true)
-    }
+    setAutoSave(!player.settings.autosave)
+}
+
+function init() {
+    player.particle = new Decimal(player.particle)
+    setAutoSave(player.settings.autosave)
 }
 
 function resetData() {
-    player.autosave = false
-    player.particle = new Decimal("1")
+    localStorage.clear()
+    player = defaultPlayer
 }
 
 function save() {
@@ -48,16 +45,13 @@ function hardReset() {
 function load() {
     var loadgame = JSON.parse(localStorage.getItem("ParticleIncSave"))
     // didn't write any data into the local storage
-    if (!saveIsVaild(loadgame)) {
-        resetData()
+    if (save === null) {
+        player = defaultPlayer
         save()
         return
     }
     player = loadgame
-    player.particle = new Decimal(player.particle)
-
-    // first call
-    setAutoSave(player.autosave)
+    init()
 }
 
 function exportSave() {
@@ -71,15 +65,14 @@ function exportSave() {
 }
 
 function importSave() {
-    loadgame = JSON.parse(atob(prompt("Input your save here:")))
-
-    if (!saveIsVaild(loadgame)) {
+    try {
+        loadgame = JSON.parse(atob(prompt("Input your save here:")))
+    } catch(SyntaxError) {
         alert("Invalid input.")
         return
     }
 
     player = loadgame
-    player.particle = new Decimal(player.particle)
     save()
     location.reload()
 }

@@ -1,46 +1,44 @@
-:root {
-    --default-font-color: white;
-    --background-color: rgb(25, 25, 25);
-    --version-border-color: rgb(10, 80, 10);
-    --top-particle-color: rgb(10, 80, 10);
-    --base-btn-border-color: rgb(10, 80, 10);
-    --theme-btn-border-color: rgb(255, 208, 0);
-}
-
 * {
-    color: var(--default-font-color);
+    color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
-    background-color: var(--background-color);
+    background-color: rgb(25, 25, 25);
     margin: 50px;
 }
 
-.version {
-    border: 2px solid var(--version-border-color);
+#version {
+    border: 2px solid rgb(10, 80, 10);
     padding: 3px;
     position: fixed;
     left: 0;
     top: 0;
 }
 
-.top-data {
-    text-align: center;
+#top-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 13px;
 }
 
-.top-particle-line {
-    font-size: 20px;
+#top-particle-line, #pps-line {
+    font-size: 13px;
 }
 
-.top-particle {
+#top-particle {
     font-size: 30px;
-    color: var(--top-particle-color);
+    color: rgb(10, 80, 10);
+    margin: auto 3px;
 }
 
-.top-bar {
-    border-spacing: 5px;
-    margin: 50px auto;
+#sel-bar {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin: 50px auto; 
 }
 
 .tab-btn {
@@ -48,14 +46,14 @@ body {
     height: 60px;
     font-size: 20px;
     background-color: transparent;
-    border-color: var(--base-btn-border-color);
+    border-color: rgb(10, 80, 10);
 }
 
 .tab {
     margin: auto;
 }
 
-.opt-container {
+#opt-container {
     margin: auto;
     display: flex;
     gap: 3px;
@@ -66,21 +64,5 @@ body {
     width: 100px;
     height: 100px;
     background-color: transparent;
-    border-color: var(--base-btn-border-color);
-}
-
-.theme-container {
-    margin-top: 80px;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-}
-
-.theme-btn {
-    background-color: transparent;
-    border-color: var(--theme-btn-border-color);
-    border-width: 3px;
-    width: 80px;
-    height: 45px;
+    border-color: rgb(10, 80, 10);
 }
