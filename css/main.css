@@ -3,9 +3,7 @@
     --background-color: rgb(25, 25, 25);
     --version-border-color: rgb(10, 80, 10);
     --top-particle-color: rgb(10, 80, 10);
-    --base-btn-bg-color: black;
     --base-btn-border-color: rgb(10, 80, 10);
-    --theme-btn-background-color: black;
     --theme-btn-border-color: rgb(255, 208, 0);
 }
 
@@ -49,7 +47,7 @@ body {
     width: 100px;
     height: 60px;
     font-size: 20px;
-    background-color: var(--base-btn-backgruond-color);
+    background-color: transparent;
     border-color: var(--base-btn-border-color);
 }
 
@@ -67,7 +65,7 @@ body {
 .opt-btn {
     width: 100px;
     height: 100px;
-    background-color: var(--base-btn-background-color);
+    background-color: transparent;
     border-color: var(--base-btn-border-color);
 }
 
@@ -80,9 +78,9 @@ body {
 }
 
 .theme-btn {
+    background-color: transparent;
     border-color: var(--theme-btn-border-color);
     border-width: 3px;
-    background-color: var(--theme-btn-background-color);
     width: 80px;
     height: 45px;
 }
