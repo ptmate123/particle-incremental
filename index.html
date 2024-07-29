@@ -22,11 +22,24 @@
             </tr>
         </tbody>
     </table>
-    <div class="tab" style="display: block;">
-        <button onclick="increase()">+1</button>
-    </div>
-    <div class="tab" style="display: none;">
-        <button onclick="toggleAutoSave()" id="toggleAutoSave">Autosave: OFF</button>
+    <div id="alltab">
+        <div class="tab" style="display: block;">
+            <button onclick="increase()">+1</button>
+        </div>
+        <div class="tab" style="display: none;">
+            <div class="opt-container" style="width: 309px;">
+                <button onclick="toggleAutoSave()" class="opt-btn" id="toggle-auto-save">自动保存: 关</button>
+                <button onclick="importSave()" class="opt-btn">导入</button>
+                <button onclick="exportSave()" class="opt-btn">导出</button>
+                <button onclick="save()" class="opt-btn">保存</button>
+                <button onclick="hardReset()" class="opt-btn">硬重置</button>
+            </div>
+            <div class="theme-container">
+                <div>主题：</div>
+                <button class="theme-btn">dark</button>
+                <button class="theme-btn">light</button>
+            </div>
+        </div>
     </div>
     <script src="scripts/break_eternity.js"></script>
     <script src="scripts/format.js"></script>

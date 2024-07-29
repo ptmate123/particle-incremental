@@ -1,19 +1,26 @@
 :root {
-    --btn-size: 100px;
+    --default-font-color: white;
+    --background-color: rgb(25, 25, 25);
+    --version-border-color: rgb(10, 80, 10);
+    --top-particle-color: rgb(10, 80, 10);
+    --base-btn-bg-color: black;
+    --base-btn-border-color: rgb(10, 80, 10);
+    --theme-btn-background-color: black;
+    --theme-btn-border-color: rgb(255, 208, 0);
 }
 
 * {
-    color: white;
+    color: var(--default-font-color);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
-    background-color: rgb(25, 25, 25);
+    background-color: var(--background-color);
     margin: 50px;
 }
 
 .version {
-    border: 2px solid rgb(10, 80, 10);
+    border: 2px solid var(--version-border-color);
     padding: 3px;
     position: fixed;
     left: 0;
@@ -30,7 +37,7 @@ body {
 
 .top-particle {
     font-size: 30px;
-    color: rgb(10, 80, 10);
+    color: var(--top-particle-color);
 }
 
 .top-bar {
@@ -39,12 +46,43 @@ body {
 }
 
 .tab-btn {
-    width: calc(var(--btn-size));
-    height: calc(var(--btn-size) * 0.6);
-    font-size: calc(var(--btn-size) * 0.2);
-    background-color: black;
+    width: 100px;
+    height: 60px;
+    font-size: 20px;
+    background-color: var(--base-btn-backgruond-color);
+    border-color: var(--base-btn-border-color);
 }
 
 .tab {
     margin: auto;
+}
+
+.opt-container {
+    margin: auto;
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+}
+
+.opt-btn {
+    width: 100px;
+    height: 100px;
+    background-color: var(--base-btn-background-color);
+    border-color: var(--base-btn-border-color);
+}
+
+.theme-container {
+    margin-top: 80px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme-btn {
+    border-color: var(--theme-btn-border-color);
+    border-width: 3px;
+    background-color: var(--theme-btn-background-color);
+    width: 80px;
+    height: 45px;
 }
