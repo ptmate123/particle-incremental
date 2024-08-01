@@ -7,7 +7,7 @@ var news = [
     "吉祥数是2048,4096等",
     "数到5吧! 0,1,2,3,4",
     "0.1+0.2不等于0.3",
-    "点击开始游戏：<a href='https://developer.mozilla.org/'>START</a>",
+    "点击开始游戏：<a target='_blank' href='https://developer.mozilla.org/'>START</a>",
     'cout << "hello python!" << endl;',
     "69? 很好的数字",
     "解方程, 解得0=1",

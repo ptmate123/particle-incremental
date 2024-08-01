@@ -4,7 +4,7 @@ let container = document.getElementById("notify-container")
 
 let startClear = 0
 
-let delay = 100
+let delay = 150
 
 function getClassName(type) {
     if (type === NOTIFY_STANDARD) {
