@@ -1,10 +1,10 @@
 var NOTIFY_STANDARD = 0, NOTIFY_ERROR = 1, NOTIFY_SUCCESS = 2
 
-var container = document.getElementById("notify-container")
+let container = document.getElementById("notify-container")
 
-var startClear = 0
+let startClear = 0
 
-var delay = 100
+let delay = 100
 
 function getClassName(type) {
     if (type === NOTIFY_STANDARD) {
@@ -20,7 +20,7 @@ function getClassName(type) {
 
 function sendNotify(type, message) {
     if (container.childElementCount > 0) {
-        if (container.lastElementChild.classList[1] == "notify-fadeout") {
+        if (container.lastElementChild.classList[1] === "notify-fadeout") {
             container.removeChild(container.lastElementChild)
         }
     }

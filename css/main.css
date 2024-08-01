@@ -6,6 +6,26 @@
     font-variant-numeric: tabular-nums;
 }
 
+@keyframes news-ticker {
+    from {
+        transform: translate(100vw, 0);
+    }
+    to {
+        transform: translate(-100%, 0);
+    }
+}
+
+@keyframes fadeout {
+    from {
+        transform: scaleY(1);
+        max-height: 200px;
+    }
+    to {
+        transform: scaleY(0);
+        max-height: 0;
+    }
+}
+
 body {
     background-color: rgb(25, 25, 25);
     margin: 50px;
@@ -41,7 +61,7 @@ body {
     display: flex;
     gap: 5px;
     justify-content: center;
-    margin: 50px auto; 
+    margin: 0 auto 20px auto; 
 }
 
 .tab-btn {
@@ -79,17 +99,6 @@ body {
     height: 100vh;
 }
 
-@keyframes fadeout {
-    from {
-        transform: scaleY(1);
-        max-height: 200px;
-    }
-    to {
-        transform: scaleY(0);
-        max-height: 0;
-    }
-}
-
 .notify-standard {
     background-color: dodgerblue;
     border: 2px solid #135698;
@@ -119,4 +128,18 @@ body {
 
 .notify-fadeout {
     animation: fadeout 250ms forwards;
+}
+
+#news-ticker {
+    overflow: hidden;
+    clip: auto;
+    margin: 1.6em 1em;
+    border: 2px solid #ae2f1a;
+    padding: 0.3em 0;
+}
+
+#news-ticker span {
+    display: inline-block;
+    white-space: nowrap;
+    animation: news-ticker linear infinite;
 }
