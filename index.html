@@ -26,7 +26,7 @@
 
     <div class="tab" style="visibility: visible;"></div>
     <div class="tab" style="visibility: hidden;">
-        <div id="opt-container" style="width: 309px;">
+        <div id="opt-container">
             <button onclick="toggleAutoSave()" class="opt-btn" id="toggle-auto-save">自动保存: 关</button>
             <button onclick="importSave()" class="opt-btn">导入</button>
             <button onclick="exportSave()" class="opt-btn">导出</button>
@@ -34,8 +34,13 @@
             <button onclick="hardReset()" class="opt-btn">硬重置</button>
         </div>
     </div>
+
+    <div id="notify-container">
+
+    </div>
     <script src="scripts/break_eternity.js"></script>
     <script src="scripts/format.js"></script>
+    <script src="scripts/notify.js"></script>
     <script src="scripts/save.js"></script>
     <script src="scripts/game.js"></script>
     <script src="scripts/main.js"></script>

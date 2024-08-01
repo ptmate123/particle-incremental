@@ -1,6 +1,9 @@
 * {
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
+    user-select: none;
+    font-weight: 100;
+    font-variant-numeric: tabular-nums;
 }
 
 body {
@@ -58,6 +61,8 @@ body {
     display: flex;
     gap: 3px;
     flex-wrap: wrap;
+    width: 80%;
+    justify-content: center;
 }
 
 .opt-btn {
@@ -65,4 +70,53 @@ body {
     height: 100px;
     background-color: transparent;
     border-color: rgb(10, 80, 10);
+}
+
+#notify-container {
+    position: fixed;
+    right: 2em;
+    top: 2em;
+    height: 100vh;
+}
+
+@keyframes fadeout {
+    from {
+        transform: scaleY(1);
+        max-height: 200px;
+    }
+    to {
+        transform: scaleY(0);
+        max-height: 0;
+    }
+}
+
+.notify-standard {
+    background-color: dodgerblue;
+    border: 2px solid #135698;
+    width: 20em;
+    padding: 0.5em;
+    margin-bottom: 0.7em;
+    color: white;
+}
+
+.notify-error {
+    background-color: #f33333;
+    border: 2px solid #ae2222;
+    width: 20em;
+    padding: 0.5em;
+    margin-bottom: 0.7em;
+    color: white;
+}
+
+.notify-success {
+    background-color: #4fd923;
+    border: 2px solid #2e9114;
+    width: 20em;
+    padding: 0.5em;
+    margin-bottom: 0.7em;
+    color: white;
+}
+
+.notify-fadeout {
+    animation: fadeout 250ms forwards;
 }

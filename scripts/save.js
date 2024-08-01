@@ -6,7 +6,7 @@ function setAutoSave(state) {
     var toggleBtn = document.getElementById("toggle-auto-save")
     if (state) {
         toggleBtn.innerHTML = "自动保存: 开"
-        autosaveId = setInterval(save, 5000)
+        autosaveId = setInterval(save, 10000)
         return
     }
     toggleBtn.innerHTML = "自动保存: 关"
@@ -30,6 +30,7 @@ function resetData() {
 function save() {
     player.lastSaveTime = Date.now()
     localStorage.setItem("ParticleIncSave", JSON.stringify(player))
+    sendNotify(NOTIFY_STANDARD, "Saved!")
 }
 
 function hardReset() {
@@ -45,7 +46,7 @@ function hardReset() {
 function load() {
     var loadgame = JSON.parse(localStorage.getItem("ParticleIncSave"))
     // didn't write any data into the local storage
-    if (save === null) {
+    if (loadgame === null) {
         player = defaultPlayer
         save()
         return
@@ -58,17 +59,17 @@ function exportSave() {
     save()
 
     navigator.clipboard.writeText(btoa(JSON.stringify(player))).then(function () {
-        alert("Copied to clipboard!")
+        sendNotify(NOTIFY_SUCCESS, "Copied to clipboard!")
     }, function () {
-        alert("Error copying to clipboard, try again...")
+        sendNotify(NOTIFY_ERROR, "Error copying to clipboard, try again...")
     });
 }
 
 function importSave() {
     try {
         loadgame = JSON.parse(atob(prompt("Input your save here:")))
-    } catch(SyntaxError) {
-        alert("Invalid input.")
+    } catch(e) {
+        sendNotify(NOTIFY_ERROR, "Invalid input.")
         return
     }
 

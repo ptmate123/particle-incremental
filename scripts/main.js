@@ -9,4 +9,5 @@ function changeTab(tabId) {
 setInterval(() => {
     document.getElementById("top-particle").innerHTML = toFormat(player.particle)
     player.lastOnlineTime = Date.now()
+    notifyTick()
 });
