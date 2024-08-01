@@ -4,8 +4,7 @@ var container = document.getElementById("notify-container")
 
 var startClear = 0
 
-var firstDelay = 100
-var delay = 6
+var delay = 100
 
 function getClassName(type) {
     if (type === NOTIFY_STANDARD) {
@@ -20,14 +19,15 @@ function getClassName(type) {
 }
 
 function sendNotify(type, message) {
-    let notify = document.createElement("div")
-    notify.className = getClassName(type)
-    notify.innerHTML = message
     if (container.childElementCount > 0) {
         if (container.lastElementChild.classList[1] == "notify-fadeout") {
             container.removeChild(container.lastElementChild)
         }
     }
+
+    let notify = document.createElement("div")
+    notify.className = getClassName(type)
+    notify.innerHTML = message
     container.appendChild(notify)
     startClear = 0
 }
@@ -44,9 +44,8 @@ function deleteNotify() {
 }
 
 function notifyTick() {
-    startClear++
-    if (startClear == firstDelay) {
+    startClear = Math.min(startClear + 1, delay)
+    if (startClear == delay) {
         deleteNotify()
-        startClear = firstDelay - delay
     }
 }
